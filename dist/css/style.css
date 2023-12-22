@@ -11,9 +11,27 @@ body {
 .head-box {
   width: 100vw;
   height: 300px;
+  position: relative;
 }
 .head-box img {
   height: 100%;
   width: 100%;
   object-fit: cover;
+}
+.text-box {
+  width: 380px;
+  height: 143px;
+  flex-shrink: 0;
+}
+.text-box .head-text {
+  color: #ffd600;
+  font-family: Ropa Sans;
+  font-size: 64px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  letter-spacing: 9.6px;
+  position: relative;
+  bottom: 14rem;
+  left: 4rem;
 }
