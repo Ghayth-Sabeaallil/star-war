@@ -35,3 +35,46 @@ body {
   bottom: 14rem;
   left: 4rem;
 }
+.main-wrap {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 9rem;
+}
+
+.main-wrap .characters {
+  width: 31rem;
+  height: 39rem;
+  background-color: #c4c4c4;
+  border-radius: 10px 10px 0px 0px;
+  position: relative;
+  bottom: 4rem;
+}
+.main-wrap .details {
+  width: 31rem;
+  height: 39rem;
+  background-color: #c4c4c4;
+  border-radius: 10px 10px 0px 0px;
+  box-shadow: 0px 5px 5px #353535;
+  position: relative;
+  bottom: 4rem;
+}
+
+.characters .characters-head {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: #ffd600;
+  font-family: Ropa Sans;
+  font-size: 30px;
+  font-style: normal;
+  font-weight: 800;
+  line-height: normal;
+  letter-spacing: 6px;
+  width: 31rem;
+  height: 6rem;
+  background-color: #535556;
+  border-radius: 10px 10px 0px 0px;
+  box-shadow: 0px 3px 5px #5a5a5a;
+}
