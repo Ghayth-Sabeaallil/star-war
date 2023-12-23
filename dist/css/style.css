@@ -147,6 +147,24 @@ body {
   background-color: #e1dede;
   color: #535556;
 }
+.characters .pages {
+  color: #000;
+  text-align: center;
+  font-family: Roboto;
+  font-size: 30px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  letter-spacing: 6px;
+  display: block;
+  margin-top: 1.5rem;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
 .details-box1 .title {
   color: #000;
   font-family: Roboto;
