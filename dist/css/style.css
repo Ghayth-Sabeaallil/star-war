@@ -102,14 +102,16 @@ body {
 }
 
 .details .details-box1 {
-  min-width: 31rem;
+  width: 31rem;
   height: 16rem;
   background-color: #c4c4c4;
+  padding: 1rem;
 }
 .details .details-box2 {
   min-width: 31rem;
   height: 17rem;
   background-color: #8e8e8e;
+  padding: 1rem;
 }
 .characters .list {
   display: flex;
@@ -144,4 +146,42 @@ body {
 .list-characters .test4 {
   background-color: #e1dede;
   color: #535556;
+}
+.details-box1 .title {
+  color: #000;
+  font-family: Roboto;
+  font-size: 30px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  letter-spacing: 6px;
+}
+.details-box1 .info {
+  color: #000;
+  font-family: Roboto;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 1.5;
+  letter-spacing: 3.6px;
+  list-style-type: none;
+}
+.details-box2 .title {
+  color: #fff;
+  font-family: Roboto;
+  font-size: 30px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  letter-spacing: 6px;
+}
+.details-box2 .info {
+  color: #fff;
+  font-family: Roboto;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 1.5;
+  letter-spacing: 3.6px;
+  list-style-type: none;
 }
