@@ -19,9 +19,9 @@ body {
   object-fit: cover;
 }
 .text-box {
-  width: 380px;
+  max-width: 380px;
   height: 143px;
-  flex-shrink: 0;
+  text-wrap: balance;
 }
 .text-box .head-text {
   color: #ffd600;
@@ -40,18 +40,20 @@ body {
   justify-content: center;
   align-items: center;
   gap: 9rem;
+  flex-wrap: wrap;
 }
 
 .main-wrap .characters {
-  width: 31rem;
+  min-width: 10rem;
   height: 39rem;
+  display: inline-block;
   background-color: #c4c4c4;
   border-radius: 10px 10px 0px 0px;
   position: relative;
   bottom: 4rem;
 }
 .main-wrap .details {
-  width: 31rem;
+  min-width: 10rem;
   height: 39rem;
   background-color: #c4c4c4;
   border-radius: 10px 10px 0px 0px;
@@ -65,6 +67,7 @@ body {
   justify-content: center;
   align-items: center;
   text-align: center;
+  flex-wrap: wrap;
   color: #ffd600;
   font-family: Ropa Sans;
   font-size: 30px;
@@ -72,9 +75,73 @@ body {
   font-weight: 800;
   line-height: normal;
   letter-spacing: 6px;
-  width: 31rem;
+  max-width: 31rem;
   height: 6rem;
   background-color: #535556;
   border-radius: 10px 10px 0px 0px;
   box-shadow: 0px 3px 5px #5a5a5a;
+}
+
+.details .details-head {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  flex-wrap: wrap;
+  color: #ffd600;
+  font-family: Ropa Sans;
+  font-size: 30px;
+  font-style: normal;
+  font-weight: 800;
+  line-height: normal;
+  letter-spacing: 6px;
+  max-width: 31rem;
+  height: 6rem;
+  background-color: #748687;
+  border-radius: 10px 10px 0px 0px;
+}
+
+.details .details-box1 {
+  min-width: 31rem;
+  height: 16rem;
+  background-color: #c4c4c4;
+}
+.details .details-box2 {
+  min-width: 31rem;
+  height: 17rem;
+  background-color: #8e8e8e;
+}
+.characters .list {
+  display: flex;
+  flex-direction: column;
+}
+.list-characters .item {
+  display: flex;
+  align-items: center;
+  padding-left: 1.5rem;
+  min-width: 31rem;
+  height: 3.5rem;
+  font-family: Roboto;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  letter-spacing: 3.6px;
+}
+
+.list-characters .test1 {
+  background-color: #8e8e8e;
+  color: white;
+}
+.list-characters .test2 {
+  background-color: #e1dede;
+  color: #535556;
+}
+.list-characters .test3 {
+  background-color: #444444;
+  color: white;
+}
+.list-characters .test4 {
+  background-color: #e1dede;
+  color: #535556;
 }
