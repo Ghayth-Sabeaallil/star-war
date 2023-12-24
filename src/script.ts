@@ -45,6 +45,8 @@ interface characters {
 }
 
 async function fetchData(currentUrl): Promise<void> {
+  rightBtn.style.pointerEvents = "none";
+  leftBtn.style.pointerEvents = "none";
   loadingCharacters.style.display = "";
   itemsStyle = 0;
   currentPage.innerHTML = getTheNumberOfThePage(currentUrl);
@@ -73,6 +75,8 @@ async function fetchData(currentUrl): Promise<void> {
         listCharacters.append(div);
       });
       loadingCharacters.style.display = "none";
+      rightBtn.style.pointerEvents = "";
+      leftBtn.style.pointerEvents = "";
     } else {
       throw Error("Något gick fel, försök igen senare");
     }
@@ -93,6 +97,8 @@ function getNextPage(): void {
     }
     const nextpage = url.slice(0, -1);
     let next = Number(currentPage.textContent);
+    rightBtn.style.pointerEvents = "none";
+    leftBtn.style.pointerEvents = "none";
     fetchData(nextpage + ++next);
   }
 }
@@ -106,6 +112,9 @@ function getPreviousPage(): void {
     }
     const nextpage = url.slice(0, -1);
     let next = Number(currentPage.textContent);
+    leftBtn.style.pointerEvents = "none";
+    rightBtn.style.pointerEvents = "none";
+
     fetchData(nextpage + --next);
   }
 }

@@ -21,6 +21,8 @@ let itemsStyle = 0;
 let numberOfPage = 1;
 function fetchData(currentUrl) {
     return __awaiter(this, void 0, void 0, function* () {
+        rightBtn.style.pointerEvents = "none";
+        leftBtn.style.pointerEvents = "none";
         loadingCharacters.style.display = "";
         itemsStyle = 0;
         currentPage.innerHTML = getTheNumberOfThePage(currentUrl);
@@ -46,6 +48,8 @@ function fetchData(currentUrl) {
                     listCharacters.append(div);
                 });
                 loadingCharacters.style.display = "none";
+                rightBtn.style.pointerEvents = "";
+                leftBtn.style.pointerEvents = "";
             }
             else {
                 throw Error("Något gick fel, försök igen senare");
@@ -68,6 +72,8 @@ function getNextPage() {
         }
         const nextpage = url.slice(0, -1);
         let next = Number(currentPage.textContent);
+        rightBtn.style.pointerEvents = "none";
+        leftBtn.style.pointerEvents = "none";
         fetchData(nextpage + ++next);
     }
 }
@@ -80,6 +86,8 @@ function getPreviousPage() {
         }
         const nextpage = url.slice(0, -1);
         let next = Number(currentPage.textContent);
+        leftBtn.style.pointerEvents = "none";
+        rightBtn.style.pointerEvents = "none";
         fetchData(nextpage + --next);
     }
 }
