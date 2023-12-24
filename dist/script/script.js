@@ -13,16 +13,19 @@ const listCharacters = document.querySelector(".list-characters");
 const leftBtn = document.querySelector(".left-btn");
 const rightBtn = document.querySelector(".right-btn");
 const currentPage = document.querySelector(".current-page");
-const numberOfPage = document.querySelector(".number-of-pages");
 const loadingCharacters = document.querySelector(".loading");
 /* URLS */
 const url = "https://swapi.dev/api/people/?page=1";
 /* Variable */
 let itemsStyle = 0;
-function fetchData() {
+let numberOfPage = 1;
+function fetchData(currentUrl) {
     return __awaiter(this, void 0, void 0, function* () {
+        loadingCharacters.style.display = "";
+        itemsStyle = 0;
+        currentPage.innerHTML = getTheNumberOfThePage(currentUrl);
         try {
-            const response = yield fetch(url);
+            const response = yield fetch(currentUrl);
             if (response.status === 200) {
                 const data = yield response.json();
                 const character = data.results;
@@ -53,4 +56,31 @@ function fetchData() {
         }
     });
 }
-fetchData();
+function getTheNumberOfThePage(currentUrl) {
+    return currentUrl.charAt(currentUrl.length - 1);
+}
+function getNextPage() {
+    if (currentPage.textContent != "9") {
+        let child = listCharacters.lastElementChild;
+        for (let i = 0; i <= 9; i++) {
+            listCharacters.removeChild(child);
+            child = listCharacters.lastElementChild;
+        }
+        const nextpage = url.slice(0, -1);
+        let next = Number(currentPage.textContent);
+        fetchData(nextpage + ++next);
+    }
+}
+function getPreviousPage() {
+    if (currentPage.textContent != "1") {
+        let child = listCharacters.lastElementChild;
+        for (let i = 0; i <= 9; i++) {
+            listCharacters.removeChild(child);
+            child = listCharacters.lastElementChild;
+        }
+        const nextpage = url.slice(0, -1);
+        let next = Number(currentPage.textContent);
+        fetchData(nextpage + --next);
+    }
+}
+fetchData(url);

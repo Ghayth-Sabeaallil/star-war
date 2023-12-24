@@ -6,9 +6,6 @@ const listCharacters = document.querySelector(
 const leftBtn = document.querySelector(".left-btn") as HTMLSpanElement;
 const rightBtn = document.querySelector(".right-btn") as HTMLSpanElement;
 const currentPage = document.querySelector(".current-page") as HTMLSpanElement;
-const numberOfPage = document.querySelector(
-  ".number-of-pages"
-) as HTMLSpanElement;
 const loadingCharacters = document.querySelector(
   ".loading"
 ) as HTMLImageElement;
@@ -18,6 +15,7 @@ const url = "https://swapi.dev/api/people/?page=1";
 
 /* Variable */
 let itemsStyle: number = 0;
+let numberOfPage: number = 1;
 
 /* Interfaces */
 interface starWar {
@@ -46,11 +44,15 @@ interface characters {
   url: string;
 }
 
-async function fetchData(): Promise<void> {
+async function fetchData(currentUrl): Promise<void> {
+  loadingCharacters.style.display = "";
+  itemsStyle = 0;
+  currentPage.innerHTML = getTheNumberOfThePage(currentUrl);
   try {
-    const response = await fetch(url);
+    const response = await fetch(currentUrl);
     if (response.status === 200) {
       const data: starWar = await response.json();
+
       const character: characters = data.results;
       character.forEach((element) => {
         itemsStyle++;
@@ -78,4 +80,33 @@ async function fetchData(): Promise<void> {
     console.log(error);
   }
 }
-fetchData();
+
+function getTheNumberOfThePage(currentUrl): string {
+  return currentUrl.charAt(currentUrl.length - 1);
+}
+function getNextPage(): void {
+  if (currentPage.textContent != "9") {
+    let child = listCharacters.lastElementChild;
+    for (let i = 0; i <= 9; i++) {
+      listCharacters.removeChild(child);
+      child = listCharacters.lastElementChild;
+    }
+    const nextpage = url.slice(0, -1);
+    let next = Number(currentPage.textContent);
+    fetchData(nextpage + ++next);
+  }
+}
+
+function getPreviousPage(): void {
+  if (currentPage.textContent != "1") {
+    let child = listCharacters.lastElementChild;
+    for (let i = 0; i <= 9; i++) {
+      listCharacters.removeChild(child);
+      child = listCharacters.lastElementChild;
+    }
+    const nextpage = url.slice(0, -1);
+    let next = Number(currentPage.textContent);
+    fetchData(nextpage + --next);
+  }
+}
+fetchData(url);
