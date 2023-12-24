@@ -130,16 +130,17 @@ body {
   align-items: center;
   padding-left: 1.5rem;
   min-width: 31rem;
-  height: 3.5rem;
+  height: 3rem;
   font-family: Roboto;
   font-size: 24px;
   font-style: normal;
   font-weight: 400;
   line-height: normal;
   letter-spacing: 3.6px;
+}
+.list-characters .hide {
   display: none;
 }
-
 .list-characters .test1 {
   background-color: #8e8e8e;
   color: white;
@@ -214,7 +215,7 @@ body {
 }
 .loading {
   animation-name: rotate;
-  animation-duration: 5s;
+  animation-duration: 2s;
   animation-iteration-count: infinite;
   animation-timing-function: linear;
   border-radius: 50%;
