@@ -44,7 +44,7 @@ body {
 }
 
 .main-wrap .characters {
-  min-width: 10rem;
+  min-width: 31rem;
   height: 39rem;
   display: inline-block;
   background-color: #c4c4c4;
@@ -117,6 +117,14 @@ body {
   display: flex;
   flex-direction: column;
 }
+.list-characters {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 28rem;
+}
+
 .list-characters .item {
   display: flex;
   align-items: center;
@@ -129,6 +137,7 @@ body {
   font-weight: 400;
   line-height: normal;
   letter-spacing: 3.6px;
+  display: none;
 }
 
 .list-characters .test1 {
@@ -202,4 +211,19 @@ body {
   line-height: 1.5;
   letter-spacing: 3.6px;
   list-style-type: none;
+}
+.loading {
+  animation-name: rotate;
+  animation-duration: 5s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+  border-radius: 50%;
+}
+@keyframes rotate {
+  from {
+    transform: rotate(-360deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
 }

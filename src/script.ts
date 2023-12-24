@@ -6,3 +6,6 @@ const currentPage = document.querySelector(".current-page") as HTMLSpanElement;
 const numberOfPage = document.querySelector(
   ".number-of-pages"
 ) as HTMLSpanElement;
+const loadingCharacters = document.querySelector(
+  ".loading"
+) as HTMLImageElement;
