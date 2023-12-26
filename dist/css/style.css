@@ -106,12 +106,18 @@ body {
   height: 16rem;
   background-color: #c4c4c4;
   padding: 1rem;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
 }
 .details .details-box2 {
   min-width: 31rem;
   height: 17rem;
   background-color: #8e8e8e;
   padding: 1rem;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
 }
 .characters .list {
   display: flex;
@@ -190,6 +196,7 @@ body {
   line-height: normal;
   letter-spacing: 6px;
 }
+
 .details-box1 .info {
   color: #000;
   font-family: Roboto;
@@ -200,7 +207,7 @@ body {
   letter-spacing: 3.6px;
   list-style-type: none;
 }
-.details-box2 .title {
+.details-box2 .title2 {
   color: #fff;
   font-family: Roboto;
   font-size: 30px;
@@ -209,7 +216,7 @@ body {
   line-height: normal;
   letter-spacing: 6px;
 }
-.details-box2 .info {
+.details-box2 .info2 {
   color: #fff;
   font-family: Roboto;
   font-size: 16px;
@@ -233,4 +240,12 @@ body {
   to {
     transform: rotate(360deg);
   }
+}
+.box1 {
+  width: 56px;
+  height: 56px;
+}
+.box2 {
+  width: 40px;
+  height: 40px;
 }
